@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b1c">
+  <title>EduVision | AI Smart Learning System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">E</div>
+        <div><strong>EduVision</strong><small>SMART LEARNING</small></div>
+      </div>
+
+      <div class="profile-mini">
+        <div class="avatar">S</div>
+        <div><strong id="sideName">Student</strong><small id="sideClass">Choose your class</small></div>
+      </div>
+
+      <p class="nav-label">WORKSPACE</p>
+      <nav class="nav-list">
+        <button class="nav-link active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+        <button class="nav-link" data-page="tutor">✦ <span>AI Personal Tutor</span></button>
+        <button class="nav-link" data-page="notes">▤ <span>My Notes</span></button>
+        <button class="nav-link" data-page="generator">✧ <span>AI Notes Generator</span></button>
+        <button class="nav-link" data-page="quiz">◈ <span>Quick Quiz</span></button>
+        <button class="nav-link" data-page="exam">▣ <span>Smart Examination</span></button>
+        <button class="nav-link" data-page="weakness">⌁ <span>Weakness Detector</span></button>
+        <button class="nav-link" data-page="syllabus">▦ <span>Syllabus Library</span></button>
+        <button class="nav-link" data-page="classroom">▧ <span>Smart Classroom</span></button>
+        <button class="nav-link" data-page="pdf">▤ <span>PDF Reader</span></button>
+        <button class="nav-link" data-page="imageSolver">▧ <span>Image Question Solver</span></button>
+        <button class="nav-link" data-page="planner">◷ <span>Study Planner</span></button>
+        <button class="nav-link" data-page="voice">♫ <span>Voice Learning</span></button>
+        <button class="nav-link" data-page="leaderboard">♛ <span>Leaderboard</span></button>
+        <button class="nav-link" data-page="certificate">♜ <span>Certificates</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="nav-link" id="themeToggle">☼ <span>Switch Theme</span></button>
+        <div class="offline-status"><span class="online-dot"></span> Browser learning mode</div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <div>
+          <p class="eyebrow">YOUR LEARNING SPACE</p>
+          <h2 id="pageHeading">Dashboard</h2>
+        </div>
+        <div class="top-actions">
+          <span class="date-chip" id="todayDate"></span>
+          <button class="icon-btn" id="topTheme" title="Change theme">◐</button>
+        </div>
+      </header>
+
+      <section class="page active" id="dashboard">
+        <div class="hero-card">
+          <div class="hero-content">
+            <span class="pill">✦ YOUR SMART STUDY COMPANION</span>
+            <h1>Learn smarter.<br><span>Achieve more.</span></h1>
+            <p>Your personal learning space for notes, exams, planning and progress.</p>
+            <button class="primary-btn" data-go="tutor">Explore AI Tutor <span>→</span></button>
+          </div>
+          <div class="hero-orb"><div class="orb-inner">EV</div></div>
+          <div class="hero-decoration"></div>
+        </div>
+
+        <div class="section-heading"><div><p class="eyebrow">YOUR OVERVIEW</p><h3>Learning Analytics</h3></div></div>
+        <div class="stats-grid">
+          <article class="stat-card"><span class="stat-icon purple">✦</span><p>Study Points</p><h2 id="xpStat">0 XP</h2><small>Total earned points</small></article>
+          <article class="stat-card"><span class="stat-icon blue">▤</span><p>Saved Notes</p><h2 id="notesStat">0</h2><small>Your personal library</small></article>
+          <article class="stat-card"><span class="stat-icon pink">◈</span><p>Quiz Attempts</p><h2 id="quizStat">0</h2><small>Completed quizzes</small></article>
+          <article class="stat-card"><span class="stat-icon green">⌁</span><p>Study Streak</p><h2 id="streakStat">1 day</h2><small>Keep learning daily</small></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel">
+            <div class="panel-heading"><div><p class="eyebrow">GET STARTED</p><h3>Quick Access</h3></div></div>
+            <div class="quick-grid">
+              <button class="quick-card" data-go="quiz"><span>◈</span><strong>Take a Quiz</strong><small>Test your knowledge</small></button>
+              <button class="quick-card" data-go="generator"><span>✧</span><strong>Create Notes</strong><small>Build study notes</small></button>
+              <button class="quick-card" data-go="planner"><span>◷</span><strong>Plan Study</strong><small>Organize your day</small></button>
+              <button class="quick-card" data-go="pdf"><span>▤</span><strong>Open PDF</strong><small>Read study material</small></button>
+            </div>
+          </article>
+          <article class="panel">
+            <div class="panel-heading"><div><p class="eyebrow">YOUR PROFILE</p><h3>Study Preferences</h3></div></div>
+            <label>Student name</label>
+            <input id="studentName" placeholder="Enter your name">
+            <label>Class</label>
+            <select id="studentClass">
+              <option value="">Select class</option>
+              <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+              <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+              <option>Class 7</option><option>Class 8</option><option>Class 9</option>
+              <option>Class 10</option><option>Class 11</option><option>Class 12</option>
+            </select>
+            <label>Board</label>
+            <select id="studentBoard">
+              <option>Punjab Board</option><option>Federal Board (FBISE)</option>
+              <option>Sindh Board</option><option>KPK Board</option>
+              <option>Balochistan Board</option><option>AJK Board</option>
+              <option>Other</option>
+            </select>
+            <button class="primary-btn full-btn" id="saveProfile">Save Profile</button>
+          </article>
+        </div>
+
+        <article class="panel">
+          <div class="panel-heading"><div><p class="eyebrow">KEEP GOING</p><h3>Your Achievement Level</h3></div><strong id="levelText">Level 1</strong></div>
+          <div class="progress-track"><div id="xpProgress" class="progress-fill"></div></div>
+          <small id="xpMessage">Earn points by studying and completing quizzes.</small>
+        </article>
+      </section>
+
+      <section class="page" id="tutor">
+        <div class="page-intro"><p class="eyebrow">LEARN STEP BY STEP</p><h1>AI Personal <span>Tutor</span></h1><p>Ask a question and get a simple learning explanation. This prototype uses built-in demo responses.</p></div>
+        <article class="panel">
+          <div class="chat-window" id="tutorChat"><div class="chat-bubble bot">Hello! I am your EduVision demo tutor. Ask me a question about a school subject.</div></div>
+          <form id="tutorForm" class="input-row"><input id="tutorQuestion" placeholder="Ask your study question..." required><button class="primary-btn">Ask ✦</button></form>
+          <button class="subtle-btn" id="clearTutor">Clear conversation</button>
+        </article>
+      </section>
+
+      <section class="page" id="notes">
+        <div class="page-intro"><p class="eyebrow">YOUR PERSONAL LIBRARY</p><h1>My <span>Notes</span></h1><p>Create, search, edit and save notes in this browser.</p></div>
+        <article class="panel">
+          <div class="form-grid"><div><label>Note title</label><input id="noteTitle" placeholder="e.g. Physics - Motion"></div><div><label>Subject</label><input id="noteSubject" placeholder="e.g. Physics"></div></div>
+          <label>Note content</label><textarea id="noteContent" rows="5" placeholder="Write your notes here..."></textarea>
+          <div class="button-row"><button class="primary-btn" id="saveNote">Save Note</button><button class="secondary-btn" id="cancelNote">Clear</button></div>
+          <input type="hidden" id="editingNote">
+        </article>
+        <div class="section-heading"><h3>Saved Notes</h3><input id="noteSearch" class="search-input" placeholder="Search notes..."></div>
+        <div class="notes-grid" id="notesList"></div>
+      </section>
+
+      <section class="page" id="generator">
+        <div class="page-intro"><p class="eyebrow">STUDY MATERIAL CREATOR</p><h1>AI Notes <span>Generator</span></h1><p>Generate a structured sample study sheet from a topic. This is a local demo, not a live AI service.</p></div>
+        <article class="panel">
+          <label>Topic</label><input id="genTopic" placeholder="e.g. Photosynthesis">
+          <label>Subject</label><input id="genSubject" placeholder="e.g. Biology">
+          <label>Language</label><select id="genLanguage"><option value="English">English</option><option value="Urdu">Urdu</option></select>
+          <button class="primary-btn" id="generateNotes">Generate Study Sheet ✧</button>
+          <div id="generatedOutput" class="generated-output hidden"></div>
+          <button class="secondary-btn hidden" id="saveGenerated">Save to My Notes</button>
+        </article>
+      </section>
+
+      <section class="page" id="quiz">
+        <div class="page-intro"><p class="eyebrow">TEST YOUR KNOWLEDGE</p><h1>Quick <span>Quiz</span></h1><p>Practice with sample questions and earn study points.</p></div>
+        <article class="panel">
+          <div class="quiz-top"><span class="pill">PRACTICE MODE</span><span id="quizCounter">Question 1</span></div>
+          <div id="quizArea"></div>
+          <div class="button-row"><button class="primary-btn" id="nextQuestion">Next Question →</button><button class="secondary-btn" id="restartQuiz">Restart</button></div>
+          <div id="quizResult" class="result-box hidden"></div>
+        </article>
+      </section>
+
+      <section class="page" id="exam">
+        <div class="page-intro"><p class="eyebrow">EXAM PRACTICE</p><h1>Smart <span>Examination</span></h1><p>Take a timed sample exam and review your result.</p></div>
+        <article class="panel">
+          <div class="exam-bar"><span class="pill">SAMPLE EXAM</span><strong id="examTimer">05:00</strong></div>
+          <div id="examArea"><p>Start a five-question practice examination. The timer begins when you start.</p><button class="primary-btn" id="startExam">Start Examination</button></div>
+          <div id="examResult" class="result-box hidden"></div>
+        </article>
+      </section>
+
+      <section class="page" id="weakness">
+        <div class="page-intro"><p class="eyebrow">LEARN FROM YOUR RESULTS</p><h1>Weakness <span>Detector</span></h1><p>Review your quiz history and identify topics that need more practice.</p></div>
+        <article class="panel"><div id="weaknessReport"><p>Complete a quiz or exam to see your learning report.</p></div></article>
+      </section>
+
+      <section class="page" id="syllabus">
+        <div class="page-intro"><p class="eyebrow">PAKISTAN EDUCATION</p><h1>Syllabus <span>Library</span></h1><p>Explore sample subject topics. Confirm your current syllabus with your board's official resources.</p></div>
+        <article class="panel">
+          <div class="form-grid"><div><label>Class</label><select id="syllabusClass"><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option><option>Class 8</option></select></div><div><label>Board</label><select id="syllabusBoard"><option>Punjab Board</option><option>Federal Board</option><option>Sindh Board</option><option>KPK Board</option><option>Balochistan Board</option><option>AJK Board</option></select></div></div>
+          <div class="form-grid"><div><label>Subject</label><select id="syllabusSubject"><option>Physics</option><option>Mathematics</option><option>Chemistry</option><option>Biology</option><option>Computer Science</option><option>English</option></select></div><div class="align-end"><button class="primary-btn" id="findSyllabus">Explore Topics</button></div></div>
+          <div id="syllabusResults" class="syllabus-list"></div>
+        </article>
+      </section>
+
+      <section class="page" id="classroom">
+        <div class="page-intro"><p class="eyebrow">STUDY TOGETHER</p><h1>Smart <span>Classroom</span></h1><p>A local classroom board for your study session.</p></div>
+        <article class="panel">
+          <label>Classroom topic</label><input id="classTopic" placeholder="Today's lesson">
+          <label>Classroom announcement</label><textarea id="classAnnouncement" rows="3" placeholder="Write an announcement..."></textarea>
+          <button class="primary-btn" id="postAnnouncement">Post to Classroom</button>
+          <div id="classPosts" class="post-list"></div>
+        </article>
+      </section>
+
+      <section class="page" id="pdf">
+        <div class="page-intro"><p class="eyebrow">YOUR STUDY DOCUMENTS</p><h1>PDF <span>Reader</span></h1><p>Open a PDF from your device. Your document stays in your browser.</p></div>
+        <article class="panel">
+          <label>Select PDF file</label><input type="file" id="pdfFile" accept="application/pdf">
+          <div id="pdfInfo" class="file-info">No PDF selected yet.</div>
+          <iframe id="pdfFrame" class="pdf-frame hidden" title="PDF preview"></iframe>
+        </article>
+      </section>
+
+      <section class="page" id="imageSolver">
+        <div class="page-intro"><p class="eyebrow">QUESTION PRACTICE</p><h1>Image Question <span>Solver</span></h1><p>Upload a question image and type its text to receive a demo explanation.</p></div>
+        <article class="panel">
+          <label>Upload question image</label><input type="file" id="questionImage" accept="image/*">
+          <img id="questionPreview" class="question-preview hidden" alt="Uploaded question preview">
+          <label>Type the question from your image</label><textarea id="imageQuestionText" rows="4" placeholder="Type the question here..."></textarea>
+          <button class="primary-btn" id="solveImageQuestion">Explain Question</button>
+          <div id="imageAnswer" class="generated-output hidden"></div>
+        </article>
+      </section>
+
+      <section class="page" id="planner">
+        <div class="page-intro"><p class="eyebrow">MAKE EVERY MINUTE COUNT</p><h1>Study <span>Planner</span></h1><p>Organize tasks and use the focus timer.</p></div>
+        <div class="dashboard-grid">
+          <article class="panel">
+            <h3>Add a Study Task</h3><label>Task</label><input id="taskInput" placeholder="e.g. Revise Chapter 2">
+            <label>Due date</label><input id="taskDate" type="date">
+            <button class="primary-btn" id="addTask">Add Task</button>
+            <div id="taskList" class="task-list"></div>
+          </article>
+          <article class="panel timer-panel">
+            <p class="eyebrow">FOCUS SESSION</p><h3>Focus Timer</h3>
+            <div class="timer-circle" id="timerDisplay">25:00</div>
+            <div class="button-row center"><button class="primary-btn" id="timerStart">Start</button><button class="secondary-btn" id="timerReset">Reset</button></div>
+            <small>Take a short break after your focus session.</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" id="voice">
+        <div class="page-intro"><p class="eyebrow">LISTEN AND LEARN</p><h1>Voice <span>Learning</span></h1><p>Read your study text aloud or try speech input if your browser supports it.</p></div>
+        <article class="panel">
+          <label>Text to read</label><textarea id="voiceText" rows="6" placeholder="Paste your notes here..."></textarea>
+          <div class="button-row"><button class="primary-btn" id="speakText">▶ Read Aloud</button><button class="secondary-btn" id="stopSpeak">Stop</button><button class="secondary-btn" id="speechInput">🎙 Speak Question</button></div>
+          <p id="speechStatus" class="muted"></p>
+        </article>
+      </section>
+
+      <section class="page" id="leaderboard">
+        <div class="page-intro"><p class="eyebrow">CELEBRATE PROGRESS</p><h1>Study <span>Leaderboard</span></h1><p>Your points are real for this browser. Other entries are example students for the demo.</p></div>
+        <article class="panel"><div id="leaderboardList"></div></article>
+      </section>
+
+      <section class="page" id="certificate">
+        <div class="page-intro"><p class="eyebrow">YOUR MILESTONES</p><h1>Achievement <span>Certificate</span></h1><p>Create a printable certificate for your study progress.</p></div>
+        <article class="panel">
+          <label>Certificate name</label><input id="certificateName" placeholder="Your name">
+          <label>Achievement</label><select id="certificateAchievement"><option>EduVision Learning Explorer</option><option>Quiz Practice Champion</option><option>Consistent Learner</option><option>Study Planner Achiever</option></select>
+          <button class="primary-btn" id="makeCertificate">Create Certificate</button>
+          <div id="certificatePreview" class="certificate hidden"></div>
+          <button class="secondary-btn hidden" id="printCertificate">Print Certificate</button>
+        </article>
+      </section>
+
+      <footer>© 2026 EduVision | Learn Smarter, Grow Faster</footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
